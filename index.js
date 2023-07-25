@@ -20,12 +20,11 @@ function play_a_round(your_choosen_values_storage){
 
     for (let i = 0; i < 5; i++) {
         let a_random_number_1_to_5 = getRandomInt(1,6)
-        the_rounds_generated_numbers.push(a_random_number_1_to_5)
-        
+        the_rounds_generated_numbers.push(a_random_number_1_to_5) 
     }
     console.log(`\n Here are your numbers ${the_rounds_generated_numbers}`);
     
-    readline.question(`\n choose your numbers! `, the_numbers_choosen => {
+     readline.question(`\n choose your numbers! `, the_numbers_choosen => { // the game loop
         let the_value = input_check_for_yatzi_numbers_round(the_rounds_generated_numbers,the_numbers_choosen);
         if( the_value !== false){
             console.log(`\n you choose ${the_numbers_choosen}`);

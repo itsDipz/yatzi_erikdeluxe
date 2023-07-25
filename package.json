@@ -1,0 +1,22 @@
+{
+  "name": "yatzi_erikdeluxe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsDipz/yatzi_erikdeluxe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsDipz/yatzi_erikdeluxe/issues"
+  },
+  "homepage": "https://github.com/itsDipz/yatzi_erikdeluxe#readme",
+  "dependencies": {
+    "node": "^20.5.0"
+  }
+}
