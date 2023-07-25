@@ -4,7 +4,7 @@ const readline = require('readline').createInterface({
 });
 
 let your_choosen_values_storage = [];
-let rounds = 5;
+let rounds = 3;
 
 function play_a_round(your_choosen_values_storage){
     console.log("\n a round started");
@@ -68,8 +68,6 @@ function input_check_for_yatzi_numbers_round(the_rounds_generated_numbers ,playe
         your_choosen_values_storage.push(the_pop_off_array[index]);
     }
 
-    console.log(the_pop_off_array);
-    console.log(the_rounds_generated_numbers);
     return the_pop_off_array;
 }
 

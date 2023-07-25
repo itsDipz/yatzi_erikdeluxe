@@ -7,3 +7,6 @@ STOR STRAIGHT: Ex. 2-3-4-5-6
 KÅK: Ex.3-5-5-3-3, 3 st 3:or, 2 st 5:or
 CHANS: Alla de fem tärningarnas ögontal räknas och summan av dessa förs in på protokollet. Den här rubriken används när ingen annan lämplig rubrik är ledig.
 YATZY: Alla de fem tärningarna visar lika och då ger Yatzy alltid 50 poäng.
+
+Lets say you choose 3 out 5 numbers in a round, then you only can throw 2 of the remaning dice so basicly you only get two more numbers and then if you
+choose one then of course you only get one dice att the end
