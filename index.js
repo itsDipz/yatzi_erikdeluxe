@@ -71,6 +71,10 @@ function input_check_for_yatzi_numbers_round(the_rounds_generated_numbers ,playe
     return the_pop_off_array;
 }
 
+function points_algorithm(){
+    
+}
+
 play_a_round(your_choosen_values_storage); // startar spelet
 
 
