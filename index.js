@@ -126,23 +126,35 @@ function points_algorithm(your_choosen_values_storage){
     // klar
     function check_for_little_straight(){
         let points_counter = 0;
-        for (let i = 0; i < your_choosen_values_storage.length; i++) {
-            if(your_choosen_values_storage[i] === i){
+        let index_counter = 0;
+        for (let i = 1; index_counter < your_choosen_values_storage.length; i++) {
+            if(your_choosen_values_storage[index_counter] === i){
                 points_counter += 2;
+                console.log(i);
+                index_counter++;
             }
             else{
                 return false; // finns för att man ska veta att om den inte retunerar poängen så får man false
             }
         }
+        return true;
     }
-    // inte klar
+    // klar
     function check_for_big_straight(){
-       for (let i = 0; i < your_choosen_values_storage.length; i++) {
-        
-        
-       } 
+        let points_counter = 0;
+        let index_counter = 0;
+        for (let i = 2; index_counter < your_choosen_values_storage.length; i++) {
+            if(your_choosen_values_storage[index_counter] === i){
+                points_counter += 4;
+                console.log(i);
+                index_counter++;
+            }
+            else{
+                return false; // finns för att man ska veta att om den inte retunerar poängen så får man false
+            }
+        }
 
-       return false; // finns för att man ska veta att om den inte retunerar poängen så får man false
+       return true; // finns för att man ska veta att om den inte retunerar poängen så får man false
     }
     // inte klar
     function check_for_kåk(){
@@ -183,12 +195,12 @@ function points_algorithm(your_choosen_values_storage){
         return false; // finns för att man ska veta att om den inte retunerar poängen så får man false
     }
     
-    console.log(check_for_yatzy());
+    console.log(check_for_big_straight());
 }
 
 // play_a_round(your_choosen_values_storage); // startar spelet
 
-let test_array = [2,2,2,2,2];
+let test_array = [2,3,4,5,5];
 points_algorithm(test_array);
 
 
