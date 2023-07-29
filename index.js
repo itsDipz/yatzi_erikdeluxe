@@ -156,24 +156,62 @@ function points_algorithm(your_choosen_values_storage){
 
        return true; // finns för att man ska veta att om den inte retunerar poängen så får man false
     }
-    // inte klar
+    //  klar
     function check_for_kåk(){
-        let points_counter = 0;
-        for (let i = 0; i < your_choosen_values_storage.length; i++) {
-            let each_index = your_choosen_values_storage[i];
-            
-            for (let j = i + 1; j < your_choosen_values_storage.length; j++) {
-                let the_check = your_choosen_values_storage[j];
-                if(each_index === the_check){
-                    points_counter++;
-                }
-                if(points_counter === 5){
-                    return 12;
-                }
-            }   
-        } 
+        function find_the_two_numbers(){
+            let array_of_the_chosen_numbers = [];
+            let first_value = your_choosen_values_storage[0];
+            let second_value;
+            let first_value_counter = 0;
+            let second_value_counter = 0;
 
-        return false; // finns för att man ska veta att om den inte retunerar poängen så får man false
+            let first_right;
+            let second_right;
+
+            for (let i = 0; i < your_choosen_values_storage.length; i++) {
+                if(first_value !== your_choosen_values_storage[i]){
+                    second_value = your_choosen_values_storage[i];
+                    array_of_the_chosen_numbers.push(first_value)
+                    array_of_the_chosen_numbers.push(second_value);
+                    break;
+                }
+            }
+            for (let j = 0; j < your_choosen_values_storage.length; j++) {
+                if(first_value === your_choosen_values_storage[j]){
+                    first_value_counter++;
+                } 
+            }
+            for (let k = 0; k < your_choosen_values_storage.length; k++) {
+                if(second_value === your_choosen_values_storage[k]){
+                    second_value_counter++;
+                } 
+            }
+
+            console.log(first_value_counter);
+            console.log(second_value_counter);
+
+            if(first_value_counter == 3 && second_value_counter == 2 || second_value_counter == 3 && first_value_counter == 2){
+                first_right = true;
+                second_right = true;
+            }
+            else{
+                first_right = false;
+                second_right = false;  
+            }
+           
+            console.log(first_right)
+            console.log(second_right);
+
+            if(first_right === true && second_right === true){
+                console.log('it was one');
+                return true;
+            }
+            else{
+                console.log('it was not one');
+                return false;
+            }
+        }
+        find_the_two_numbers();
     }
     // klar
     function check_for_yatzy(){
@@ -195,12 +233,12 @@ function points_algorithm(your_choosen_values_storage){
         return false; // finns för att man ska veta att om den inte retunerar poängen så får man false
     }
     
-    console.log(check_for_big_straight());
+    check_for_kåk();
 }
 
 // play_a_round(your_choosen_values_storage); // startar spelet
 
-let test_array = [2,3,4,5,5];
+let test_array = [2,5,2,3,3];
 points_algorithm(test_array);
 
 
