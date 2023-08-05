@@ -1,5 +1,3 @@
-const { count } = require('console');
-
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -27,12 +25,16 @@ function play_a_round(your_choosen_values_storage){
     console.log(`\n Here are your numbers ${the_rounds_generated_numbers}`);
     
      readline.question(`\n choose your numbers! `, the_numbers_choosen => { // the game loop
-        let the_value = input_check_for_yatzi_numbers_round(the_rounds_generated_numbers,the_numbers_choosen);
-        if( the_value !== false){
+        let the_numbers_choosen_checked = input_check_for_yatzi_numbers_round(the_rounds_generated_numbers,the_numbers_choosen);
+       
+        if( the_numbers_choosen_checked !== false){
             console.log(`\n you choose ${the_numbers_choosen}`);
-            if(rounds === 0 || your_choosen_values_storage.length === 5){
+            for (let i = 0; i < the_numbers_choosen_checked.length; i++) {
+                your_choosen_values_storage.push(the_numbers_choosen_checked[i]);
+            }
+            if(rounds === 0){
+                points_algorithm(your_choosen_values_storage)
                 console.log("Game done!");
-                console.log(`your values are ${your_choosen_values_storage}`);
                 readline.close();
             }
             else{
@@ -50,6 +52,7 @@ function play_a_round(your_choosen_values_storage){
 
 function input_check_for_yatzi_numbers_round(the_rounds_generated_numbers ,player_input){
     let the_pop_off_array = [];
+    console.log(player_input)
     for (let i = 0; i < player_input.length; i++) {
         let the_number = parseInt(player_input[i]);
     
@@ -280,19 +283,9 @@ function points_algorithm(your_choosen_values_storage){
 
 }
 
-// play_a_round(your_choosen_values_storage); // startar spelet
 
-let test_array = [2,2,2,2,3];
-points_algorithm(test_array);
+play_a_round(your_choosen_values_storage);
 
 
-/*
-    TO-DO:
 
-    1.Jag måste kolla så att inputet av användaren, finns med i arrayen d.v.s 
-    om tärningskastet är 1,4,4,3,2 och användaren vill spara de två fyrorna så måste jag
-    kolla att det finns 2 fyror i arrayen to begin with. 
 
-    2. Gör en algoritm som kollar reglerna för poängen
-
-*/
